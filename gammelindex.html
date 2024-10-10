@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Velkommen til SvenKom!</title>
+    <style>
+        /* Global stiler */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        /* Overskrift */
+        h1 {
+            font-size: 4em;
+            margin-bottom: 0.5em;
+            animation: fadeInDown 1s ease-out;
+        }
+        /* Seksjonstitler */
+        h2 {
+            font-size: 2.5em;
+            margin-top: 1em;
+            animation: fadeInDown 1s ease-out;
+        }
+        /* Tekst */
+        p {
+            font-size: 1.5em;
+            line-height: 1.6;
+            margin: 0.5em 0;
+            animation: fadeInUp 1s ease-out;
+        }
+        /* Sponsorliste */
+        .sponsors {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2em;
+            animation: fadeInUp 1s ease-out;
+        }
+        .sponsor {
+            background: rgba(255, 255, 255, 0.1);
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1 1 200px;
+            max-width: 200px;
+            box-sizing: border-box;
+        }
+        .sponsor h3 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        /* Animasjoner */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Responsiv design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hei og velkommen til SvenKom!</h1>
+        <p>Her kommer praktisk info om svenkom.</p>
+        <p>Ryktes btw om opptaksmuligheter på DT i dag</p>
+
+        <h2>Stolte sponsorer</h2>
+        <div class="sponsors">
+            <div class="sponsor">
+                <h3>SvenBank1</h3>
+            </div>
+            <div class="sponsor">
+                <h3>Den Svenske Bank</h3>
+            </div>
+            <div class="sponsor">
+                <h3>Svoogle</h3>
+            </div>
+            <div class="sponsor">
+                <h3>Smeta</h3>
+            </div>
+            <div class="sponsor">
+                <h3>MicroSven</h3>
+            </div>
+            <div class="sponsor">
+                <h3>SPMG</h3>
+            </div>
+            <div class="sponsor">
+                <h3>McSven &amp; Company</h3>
+            </div>
+            <div class="sponsor">
+                <h3>Sven CG</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

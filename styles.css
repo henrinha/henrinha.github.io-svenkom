@@ -1,0 +1,126 @@
+
+/* Global stiler */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1f4037, #99f2c8);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+#countdown {
+    font-size: 2em;
+    margin-top: 1em;
+    animation: fadeInDown 1s ease-out;
+}
+
+.next-event {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 15px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.event-details {
+    font-size: 1.8em;
+    margin: 0.5em 0;
+    animation: fadeInDown 1s ease-out;
+}
+
+.countdown-timer {
+    font-size: 3em;
+    margin-top: 20px;
+    color: #99f2c8;
+    animation: fadeInDown 1s ease-out;
+}
+
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+/* Overskrift */
+h1 {
+    font-size: 4em;
+    margin-bottom: 0.5em;
+    animation: fadeInDown 1s ease-out;
+}
+/* Seksjonstitler */
+h2 {
+    font-size: 2.5em;
+    margin-top: 1em;
+    animation: fadeInDown 1s ease-out;
+}
+/* Tekst */
+p {
+    font-size: 1.5em;
+    line-height: 1.6;
+    margin: 0.5em 0;
+    animation: fadeInDown 1s ease-out;
+}
+/* Sponsorliste */
+.sponsors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2em;
+    animation: fadeInDown 1s ease-out;
+}
+.sponsor {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 200px;
+    max-width: 200px;
+    box-sizing: border-box;
+}
+.sponsor h3 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.sponsor:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Animasjoner */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Responsiv design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1.2em;
+    }
+}
