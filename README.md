@@ -1,4 +1,4 @@
-# henrinha.github.io-tag19
+# henrinha.github.io-svenkom
 
 for å test lokalt, lag en lokal server og gå inn på localhost i nettleseren for å se
 
