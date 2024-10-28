@@ -1,7 +1,6 @@
-# henrinha.github.io-svenkom
+# henrinha.github.io
 
-for å test lokalt, lag en lokal server og gå inn på localhost i nettleseren for å se
-
+# for å test lokalt, lag en lokal server og gå inn på localhost i nettleseren for å se
 * python3 -m http.server
 * http://localhost:8000
 * stoppe lokal host: control + c

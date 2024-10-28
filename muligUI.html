@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Hvor er vors??</title>
+    <!-- Legg til Google Fonts for bedre typografi -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        /* Navigasjonsmeny */
+        header {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        /* Hero-seksjon */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url('https://images.unsplash.com/photo-1519975258510-3ec1149b11ae?fit=crop&w=1950&q=80') no-repeat center center/cover;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+        .btn {
+            background: #ffd700;
+            color: #000;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #ffa500;
+        }
+        /* Event-seksjon */
+        .events {
+            padding: 100px 20px;
+            background: #f0f0f0;
+            color: #333;
+        }
+        .events h2 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 50px;
+        }
+        .event-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .event-info {
+            background: #fff;
+            padding: 30px;
+            margin: 15px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .event-info:hover {
+            transform: translateY(-10px);
+        }
+        .event-info h3 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .event-info p {
+            font-size: 1em;
+        }
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        /* Responsiv design */
+        @media(max-width: 768px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+            .events h2 {
+                font-size: 2.5em;
+            }
+            .event-info {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigasjonsmeny -->
+    <header>
+        <nav>
+            <a href="#home">Hjem</a>
+            <a href="#events">Eventer</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+    </header>
+    <!-- Hero-seksjon -->
+    <section class="hero" id="home">
+        <h1>Hvor er vorset?</h1>
+        <p>Lei av å lure på hvor helgens vors er? Vi har oversikten!</p>
+        <button class="btn" onclick="window.location.href='#events'">Se Eventer</button>
+    </section>
+    <!-- Event-seksjon -->
+    <section class="events" id="events">
+        <h2>Kommende Eventer</h2>
+        <div class="event-container">
+            <div class="event-info">
+                <h3>Torsdag</h3>
+                <p><strong>Vors hos Ola på Ila før DT torsdag</strong></p>
+            </div>
+            <div class="event-info">
+                <h3>Fredag</h3>
+                <p><strong>Vors hos Martin i Oslo</strong></p>
+            </div>
+            <div class="event-info">
+                <h3>Lørdag</h3>
+                <p><strong>TBA, kom gjerne med forslag</strong></p>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="contact">
+        <p>Kontakt oss på <a href="mailto:kontakt@vors.no">kontakt@vors.no</a></p>
+        <p>Følg oss på sosiale medier:</p>
+        <!-- Legg til sosiale medier ikoner -->
+    </footer>
+</body>
+</html>

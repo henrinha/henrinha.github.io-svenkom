@@ -2,55 +2,141 @@
 <html lang="no">
 <head>
     <meta charset="UTF-8">
-    <title>Velkommen til SvenKom!</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hvor er vorset?</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap" rel="stylesheet">
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
+    <script>
+        // Firebase configuration object
+        const firebaseConfig = {
+            apiKey: "AIzaSyCRzLIVCn4C-Att3w5B94M_tUncLFs-o6E",
+            authDomain: "hvorervors.firebaseapp.com",
+            projectId: "hvorervors",
+            storageBucket: "hvorervors.appspot.com",
+            messagingSenderId: "515878760173",
+            appId: "1:515878760173:web:0c62da6c186c7514b7e6e4",
+            measurementId: "G-M7P2NZFVR4"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+        const analytics = firebase.analytics();
+    </script>
 </head>
+<script>
+    let lastScrollTop = 0;
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            // Scroll down - hide the header
+            header.style.top = "-80px";
+        } else {
+            // Scroll up - show the header
+            header.style.top = "0";
+        }
+        lastScrollTop = scrollTop;
+    });
+</script>
+
 <body>
-    <div class="container">
-        <h1>Hei og velkommen til SvenKom!</h1>
-        <p>Her kommer praktisk info om svenkom.</p>
-        <p>Ryktes btw om opptaksmuligheter på DT i dag</p>
-
-        <div class="next-event">
-            <h2>Neste Svenkom-opptak</h2>
-            <p class="event-details">Hva: DT-vors</p>
-            <p class="event-details">Sted: Haugans crib</p>
-            <div id="countdown" class="countdown-timer"></div>
-            <br>
-            <br>
+    <!-- Navigation Menu -->
+    <!-- <header>
+        <nav>
+            <a href="#home">Hjem</a>
+            <a href="#events">Vorsside</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+    </header> -->
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Gled deg til vors i fritzls kjeller! Ikke glem å delta i Vors-discussion</h1>
+            <button class="btn" onclick="window.location.href='#events'">Se Eventer</button>
         </div>
-
-        
-
-        <script src="script.js"></script>
-
-        <h2>Stolte sponsorer</h2>
-        <div class="sponsors">
-            <div class="sponsor">
-                <h3>SvenBank1</h3>
-            </div>
-            <div class="sponsor">
-                <h3>Den Svenske Bank</h3>
-            </div>
-            <div class="sponsor">
-                <h3>Svoogle</h3>
-            </div>
-            <div class="sponsor">
-                <h3>Smeta</h3>
-            </div>
-            <div class="sponsor">
-                <h3>MicroSven</h3>
-            </div>
-            <div class="sponsor">
-                <h3>SPMG</h3>
-            </div>
-            <div class="sponsor">
-                <h3>McSven &amp; Company</h3>
-            </div>
-            <div class="sponsor">
-                <h3>Sven CG</h3>
-            </div>
+    </section>
+    <!-- Plan Section -->
+    <section class="plan" id="plan">
+        <h2>Plan for kvelden</h2>
+        <ul>
+            <li>18:00 - Ankomst og velkomstdrink</li>
+            <li>19:00 - Forrett: Carpaccio</li>
+            <li>20:00 - Hovedrett: Biff med tilbehør</li>
+            <li>21:00 - Dessert: Sjokolademousse</li>
+            <li>22:00 - Underholdning og mingling</li>
+            <li>23:00 - Overraskelse fra verten</li>
+            <li>04:00 - Nach med Ludvig</li>
+        </ul>
+    </section>
+    <!-- Discussion Forum Section -->
+    <section class="discussion" id="discussion">
+        <h2>Vors-discussion</h2>
+        <div id="chat-container">
+            <div id="messages"></div>
+            <form id="message-form">
+                <input type="text" id="nickname-input" placeholder="Ditt kallenavn" required autocomplete="off">
+                <input type="text" id="message-input" placeholder="Skriv en melding..." required autocomplete="off">
+                <button type="submit">Send</button>
+            </form>
         </div>
+    </section>
+     <!-- Gallery Section -->
+     <section class="gallery-section">
+        <h2>Galleri</h2>
+        <div class="gallery-container">
+        </div>
+    </section>
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
     </div>
+    <!-- Image Section -->
+    <section class="image-section">
+        <h2>Gleder meg til å se alle mine venner!</h2>
+        <img src="jon.jpg" alt="Beskrivelse av bildet">
+    </section>
+    <!-- Event Section -->
+    <section class="events" id="events">
+        <h2>Kommende Eventer</h2>
+        <div class="event-container">
+            <div class="event-info">
+                <h3>Torsdag</h3>
+                <p><strong>Det er vors hos OLA før DT!</strong></p>
+            </div>
+            <div class="event-info">
+                <h3>Fredag</h3>
+                <p><strong>Vors hos Martin i Oslo</strong></p>
+            </div>
+            <div class="event-info">
+                <h3>Lørdag</h3>
+                <p><strong>TBA, kom gjerne med forslag</strong></p>
+            </div>
+        </div>
+    </section>
+   
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>Kontakt oss på <a href="mailto:kontakt@vors.no">ola@ola.no</a></p>
+        <p>Følg oss på sosiale medier:</p>
+        <!-- Add social media icons if needed -->
+    </footer>
+    <!-- Include JavaScript Files -->
+    <script src="discussion.js"></script>
+    <script src="lightbox.js"></script>
 </body>
 </html>
